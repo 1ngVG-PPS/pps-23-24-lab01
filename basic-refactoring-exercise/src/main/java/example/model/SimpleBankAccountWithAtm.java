@@ -13,7 +13,6 @@ public class SimpleBankAccountWithAtm extends SimpleBankAccount{
         if (checkUser(userID)) {
             this.balance -= fee ;
         }
-
     }
     
 }

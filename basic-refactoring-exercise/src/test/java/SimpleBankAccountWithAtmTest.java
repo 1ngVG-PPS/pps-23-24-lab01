@@ -38,7 +38,7 @@ class SimpleBankAccountWithAtmTest {
         bankAccount.deposit(accountHolder.getId(), 100);
         bankAccount.applyFee(accountHolder.getId());
         bankAccount.deposit(2, 50);
-        bankAccount.applyFee(accountHolder.getId());
+        bankAccount.applyFee(2);
         assertEquals(99, bankAccount.getBalance());
     }
 
@@ -59,6 +59,7 @@ class SimpleBankAccountWithAtmTest {
         bankAccount.applyFee(2);
         assertEquals(99, bankAccount.getBalance());
     }
+
 }
 
     
