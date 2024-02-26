@@ -7,7 +7,7 @@ package example.model;
  */
 public class SimpleBankAccount implements BankAccount {
 
-    private double balance;
+    protected double balance;
     private final AccountHolder holder;
 
     public SimpleBankAccount(final AccountHolder holder, final double balance) {
@@ -37,12 +37,21 @@ public class SimpleBankAccount implements BankAccount {
             this.balance -= amount;
         }
     }
+    
+    
+    public void applyFee(final int userID){
+        double fee = 1;
+        if (checkUser(userID)) {
+            this.balance -= fee ;
+        }
+    }
 
     private boolean isWithdrawAllowed(final double amount){
         return this.balance >= amount;
     }
 
-    private boolean checkUser(final int id) {
+    protected boolean checkUser(final int id) {
         return this.holder.getId() == id;
     }
+    
 }
